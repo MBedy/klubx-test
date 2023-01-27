@@ -1,21 +1,20 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+
+import ReactQueryProvider from "./src/contexts/react-query";
+import SafeAreaProvider from "./src/contexts/safe-area";
+import useScreenOrientation from "./src/hooks/use-screen-orientation";
+import HomeScreen from "./src/screen";
 
 export default function App() {
+  useScreenOrientation();
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <ReactQueryProvider>
       <StatusBar style="auto" />
-    </View>
+      <SafeAreaProvider>
+        <HomeScreen />
+      </SafeAreaProvider>
+    </ReactQueryProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
