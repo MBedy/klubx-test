@@ -14,16 +14,20 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
-      "requireFullScreen": true
+      "requireFullScreen": true,
+      "bundleIdentifier": "com.okobe.klubxtest"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.okobe.klubxtest"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -35,6 +39,11 @@
           "initialOrientation": "PORTRAIT"
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "4fa20759-1ced-4060-a281-20681ae03d84"
+      }
+    }
   }
 }
